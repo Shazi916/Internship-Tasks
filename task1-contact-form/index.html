@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Get in Touch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+        <!-- Left panel: brand / info -->
+        <section class="info-panel">
+            <div class="info-inner">
+                <div class="logo">
+                    <span class="logo-mark">✦</span>
+                    <span class="logo-text">Get in touch</span>
+                </div>
+
+                <h1 class="headline">
+                    Let's start<br>
+                    <span class="accent">a conversation.</span>
+                </h1>
+
+                <p class="lede">
+                    Have a question, an idea, or just want to say hello? Fill out the form and we'll get back to you within 24 hours.
+                </p>
+
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">hello@example.com</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">+92 307 339 1825</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Address</span>
+                        <span class="contact-value">Mandi Bahauddin, Pakistan</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Right panel: the form -->
+        <section class="form-panel">
+            <form class="contact-form" action="#" method="POST">
+                <h2 class="form-title">Send us a message</h2>
+                <p class="form-sub">We read every message. Really.</p>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="firstName">First name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Ayesha" required>
+                    </div>
+                    <div class="field">
+                        <label for="lastName">Last name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Khan" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="field">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                </div>
+
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us a little about your project or question..." required></textarea>
+                </div>
+
+                <div class="field checkbox-field">
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <label for="agree">I agree to be contacted about my inquiry.</label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Send message
+                    <span class="arrow">→</span>
+                </button>
+
+                <p class="fine-print">By submitting, you agree to our privacy policy.</p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,344 @@
+/* ---------- Design tokens ---------- */
+:root {
+    --bg: #fafaf7;
+    --panel-dark: #0f172a;
+    --panel-light: #ffffff;
+    --ink: #0f172a;
+    --ink-inverse: #f8fafc;
+    --muted: #64748b;
+    --muted-dark: #94a3b8;
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+    --border: #e2e8f0;
+    --border-dark: #1e293b;
+    --shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 20px 40px rgba(15, 23, 42, 0.06);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Page layout ---------- */
+.page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* ---------- Left info panel ---------- */
+.info-panel {
+    background: var(--panel-dark);
+    color: var(--ink-inverse);
+    padding: 4rem 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle decorative gradient accent in top-right of dark panel */
+.info-panel::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.25), transparent 70%);
+    pointer-events: none;
+}
+
+.info-inner {
+    max-width: 440px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--muted-dark);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.logo-mark {
+    color: var(--accent);
+    font-size: 1.25rem;
+}
+
+.headline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.accent {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.lede {
+    color: var(--muted-dark);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    margin-bottom: 3rem;
+    max-width: 380px;
+}
+
+.contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-dark);
+}
+
+.contact-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-dark);
+}
+
+.contact-value {
+    font-size: 0.9375rem;
+    color: var(--ink-inverse);
+}
+
+/* ---------- Right form panel ---------- */
+.form-panel {
+    padding: 4rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 480px;
+    background: var(--panel-light);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.form-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+}
+
+.form-sub {
+    color: var(--muted);
+    font-size: 0.9375rem;
+    margin-bottom: 2rem;
+}
+
+/* ---------- Form fields ---------- */
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.row .field {
+    margin-bottom: 0;
+}
+
+.field label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field textarea {
+    font-family: inherit;
+    font-size: 0.9375rem;
+    color: var(--ink);
+    background: var(--panel-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 0.875rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    width: 100%;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: var(--muted-dark);
+}
+
+.field input:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.field textarea {
+    resize: vertical;
+    min-height: 110px;
+    font-family: inherit;
+}
+
+/* ---------- Checkbox ---------- */
+.checkbox-field {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox-field input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.checkbox-field label {
+    font-weight: 400;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+/* ---------- Submit button ---------- */
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 1.25rem;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+    margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+    background: var(--accent-hover);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+.submit-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.arrow {
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.submit-btn:hover .arrow {
+    transform: translateX(3px);
+}
+
+.fine-print {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 1.25rem;
+}
+
+/* ---------- Responsive: stack on mobile ---------- */
+@media (max-width: 900px) {
+    .page {
+        grid-template-columns: 1fr;
+    }
+
+    .info-panel {
+        padding: 3rem 1.5rem;
+    }
+
+    .form-panel {
+        padding: 2rem 1.5rem 3rem;
+    }
+
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+
+    .lede {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .row .field {
+        margin-bottom: 1.25rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
