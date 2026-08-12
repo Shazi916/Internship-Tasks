@@ -1,61 +1,53 @@
-# NovaStack Hub — Web Development Internship (Level 1)
+# NovaStack Hub — Web Development Internship
 
-This repository contains my submissions for **Level 1** of the NovaStack Hub Web Development Internship, 2026.
+This repository contains my submissions for the **NovaStack Hub Web Development Internship 2026**.
 
-## 🎯 Tasks Completed
+## 📚 Tasks Completed
 
-### Task 1 — Contact Form
+### Level 1 — HTML & CSS
+
+#### Task 1 — Contact Form
 A responsive contact form with a split-panel layout. Built with pure HTML and CSS.
-
-**Features:**
-- Two-column layout (info panel + form)
-- Client-side validation (required fields, email format)
-- Accessible form labels and focus states
-- Fully responsive — stacks to a single column on mobile
-- Custom-styled inputs, textarea, checkbox, and submit button
-
 📂 [`/task1-contact-form`](./task1-contact-form)
 
-### Task 2 — Personal Website
-A single-page personal portfolio website. Built with pure HTML and CSS.
-
-**Sections:**
-- Sticky navigation bar
-- Hero with intro & call-to-action
-- About Me
-- Skills grid
-- Featured Projects
-- Contact section (dark theme)
-- Footer
-
-**Features:**
-- Modern, clean design using Playfair Display + Inter fonts
-- Smooth scroll navigation
-- Fully responsive on mobile, tablet, and desktop
-- Accessible focus states and reduced-motion support
-
+#### Task 2 — Personal Website
+A single-page personal portfolio website with hero, about, skills, projects, and contact sections. Built with pure HTML and CSS.
 📂 [`/task2-personal-website`](./task2-personal-website)
+
+### Level 2 — HTML, CSS & JavaScript
+
+#### Task 3 — Weather App
+A live weather app that fetches real-time weather data for any city in the world. Includes current conditions and a 7-day forecast.
+- **API used:** [Open-Meteo](https://open-meteo.com/) (free, no API key required)
+- **Features:** City search, current temperature, humidity, wind, feels-like, high/low, 7-day forecast, loading & error states
+
+📂 [`/task3-weather-app`](./task3-weather-app)
+
+#### Task 4 — Countdown Timer
+A live countdown timer to any custom date and time. Includes preset shortcuts and persists across page refreshes.
+- **Features:** Custom event name & date, live seconds ticker, progress bar, presets (New Year, Next Saturday, Tomorrow 9 AM), localStorage persistence, celebration screen when timer ends
+
+📂 [`/task4-countdown-timer`](./task4-countdown-timer)
 
 ## 🛠️ Technologies Used
 - HTML5 (semantic markup)
-- CSS3 (Flexbox, Grid, custom properties, media queries)
-- Google Fonts
+- CSS3 (Flexbox, Grid, custom properties, media queries, animations)
+- JavaScript (ES6+, Fetch API, DOM manipulation, localStorage)
+- Google Fonts (Inter, Playfair Display)
 
 ## 🚀 How to Run
-Simply open `index.html` in any modern browser. No build step or dependencies required.
+Just open any `index.html` file in your browser. No build step or dependencies required.
 
 ```bash
-# For Task 1 — Contact Form
-cd task1-contact-form
+# Open any task in your browser
+cd task3-weather-app
 open index.html   # or double-click the file
-
-# For Task 2 — Personal Website
-cd task2-personal-website
-open index.html
 ```
 
+The Weather App needs an internet connection (to fetch weather data). All other tasks work offline.
+
 ## 📸 Screenshots
-Screenshots of both projects are included in the submission form.
+Screenshots of all projects are included in the submission form.
 
 ---
 
