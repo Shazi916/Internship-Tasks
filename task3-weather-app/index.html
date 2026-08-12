@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app" id="app">
+
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-mark">✦</span>
+                <span class="logo-text">Weather</span>
+            </div>
+            <p class="tagline">Get the current weather for any city in the world.</p>
+        </header>
+
+        <!-- Search bar -->
+        <form class="search-form" id="searchForm">
+            <input
+                type="text"
+                id="cityInput"
+                class="search-input"
+                placeholder="Search for a city, e.g. Islamabad"
+                autocomplete="off"
+                required>
+            <button type="submit" class="search-btn" aria-label="Search">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </form>
+
+        <!-- Weather display area -->
+        <main class="weather-container" id="weatherContainer">
+
+            <!-- Empty state (shown by default) -->
+            <div class="state state-empty" id="stateEmpty">
+                <div class="state-icon">🌍</div>
+                <h2 class="state-title">Search for a city</h2>
+                <p class="state-text">Type any city name above to see its current weather and today's forecast.</p>
+            </div>
+
+            <!-- Loading state -->
+            <div class="state state-loading hidden" id="stateLoading">
+                <div class="spinner"></div>
+                <p class="state-text">Fetching weather data...</p>
+            </div>
+
+            <!-- Error state -->
+            <div class="state state-error hidden" id="stateError">
+                <div class="state-icon">🔍</div>
+                <h2 class="state-title">City not found</h2>
+                <p class="state-text" id="errorMessage">Try a different spelling or search for a nearby city.</p>
+            </div>
+
+            <!-- Weather card (hidden until data loads) -->
+            <div class="weather-card hidden" id="weatherCard">
+                <!-- Current weather -->
+                <div class="current-weather">
+                    <div class="location">
+                        <h2 class="city" id="cityName">—</h2>
+                        <p class="country" id="countryName">—</p>
+                    </div>
+
+                    <div class="temp-block">
+                        <div class="weather-icon" id="weatherIcon">☀️</div>
+                        <div class="temperature" id="temperature">—°</div>
+                        <div class="condition" id="condition">—</div>
+                    </div>
+                </div>
+
+                <!-- Details grid -->
+                <div class="details">
+                    <div class="detail">
+                        <span class="detail-label">Feels like</span>
+                        <span class="detail-value" id="feelsLike">—°</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Humidity</span>
+                        <span class="detail-value" id="humidity">—%</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Wind</span>
+                        <span class="detail-value" id="wind">— km/h</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">High / Low</span>
+                        <span class="detail-value" id="highLow">—° / —°</span>
+                    </div>
+                </div>
+
+                <!-- 7-day forecast -->
+                <div class="forecast">
+                    <h3 class="forecast-title">7-Day Forecast</h3>
+                    <div class="forecast-list" id="forecastList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Built with HTML, CSS &amp; JavaScript · Data from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
