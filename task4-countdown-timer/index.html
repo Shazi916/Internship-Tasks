@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-mark">✦</span>
+                <span class="logo-text">Countdown</span>
+            </div>
+            <p class="tagline">Count down to any moment that matters.</p>
+        </header>
+
+        <!-- Main card -->
+        <main class="timer-card">
+
+            <!-- Setup view (visible by default) -->
+            <section class="setup-view" id="setupView">
+                <h2 class="setup-title">What are you counting down to?</h2>
+
+                <form class="setup-form" id="setupForm">
+                    <div class="field">
+                        <label for="eventName">Event name</label>
+                        <input
+                            type="text"
+                            id="eventName"
+                            placeholder="e.g. My Birthday"
+                            maxlength="60"
+                            required>
+                    </div>
+
+                    <div class="field">
+                        <label for="targetDate">Date &amp; time</label>
+                        <input type="datetime-local" id="targetDate" required>
+                    </div>
+
+                    <div class="presets">
+                        <p class="presets-label">Or pick a preset:</p>
+                        <div class="preset-btns">
+                            <button type="button" class="preset-btn" data-preset="newYear">New Year's Day</button>
+                            <button type="button" class="preset-btn" data-preset="weekend">Next Saturday</button>
+                            <button type="button" class="preset-btn" data-preset="tomorrow">Tomorrow 9 AM</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="start-btn">
+                        Start countdown
+                        <span class="arrow">→</span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Countdown view (hidden until timer is set) -->
+            <section class="countdown-view hidden" id="countdownView">
+                <div class="event-header">
+                    <p class="event-label">Counting down to</p>
+                    <h2 class="event-name" id="eventLabel">—</h2>
+                    <p class="event-date" id="eventDate">—</p>
+                </div>
+
+                <div class="digits" id="digits">
+                    <div class="digit-block">
+                        <div class="digit" id="daysDigit">00</div>
+                        <div class="digit-label">Days</div>
+                    </div>
+                    <div class="digit-block">
+                        <div class="digit" id="hoursDigit">00</div>
+                        <div class="digit-label">Hours</div>
+                    </div>
+                    <div class="digit-block">
+                        <div class="digit" id="minutesDigit">00</div>
+                        <div class="digit-label">Minutes</div>
+                    </div>
+                    <div class="digit-block">
+                        <div class="digit" id="secondsDigit">00</div>
+                        <div class="digit-label">Seconds</div>
+                    </div>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="progress-wrap">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p class="progress-text" id="progressText">—</p>
+
+                <div class="actions">
+                    <button type="button" class="btn btn-secondary" id="changeBtn">Change event</button>
+                </div>
+            </section>
+
+            <!-- Completed view (shown when timer hits zero) -->
+            <section class="done-view hidden" id="doneView">
+                <div class="done-icon">🎉</div>
+                <h2 class="done-title">The moment is here!</h2>
+                <p class="done-text" id="doneText">Your countdown for "—" has ended. Congratulations!</p>
+                <button type="button" class="btn btn-primary" id="newTimerBtn">Start a new countdown</button>
+            </section>
+
+        </main>
+
+        <footer class="app-footer">
+            <p>Built with HTML, CSS &amp; JavaScript · Your countdown is saved in this browser only.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
